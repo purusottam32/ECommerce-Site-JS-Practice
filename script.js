@@ -32,6 +32,7 @@ function addToCart(item){
    cart.push(item);
    localStorage.setItem("cart",JSON.stringify(cart));
     alert("ITEM ADDED TO CART !!!")
+    updateCart();
 
 }
 
