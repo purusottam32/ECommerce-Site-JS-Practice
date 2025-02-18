@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 clone.getElementById("pimg").src = item.image;
                 clone.getElementById("pimg").alt = item.name;
-                clone.getElementById("pname").textContent = item.name; // Fixed typo
+                clone.getElementById("pname").textContent = item.name;
                 clone.getElementById("price").textContent = `${item.price} INR`;
 
                 clone.querySelector("button").addEventListener("click", () => removeItem(item));
@@ -51,51 +51,3 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCart();
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const cartContainer = document.getElementById("container");
-//     const cartItemTemplate = document.getElementById("cart-item-template");
-//     const totalPriceEl = document.getElementById("total-price");
-//     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-//     function updateCart() {
-//         cartContainer.innerHTML = '<h1 class="text-3xl font-bold">Your Cart</h1>';
-//         cart.forEach((item, index) => {
-//             const clone = cartItemTemplate.content.cloneNode(true);
-//             clone.querySelector("img").src = item.image;
-//             clone.querySelector("h3").textContent = item.name;
-//             clone.querySelector(".cartItemPrice").textContent = `Price: ${item.price} INR`;
-//             const removeButton = clone.querySelector(".remove-btn");
-//             removeButton.addEventListener("click", () => removeFromCart(index));
-//             cartContainer.appendChild(clone);
-//         });
-//         totalPriceEl.textContent = `Total: ${calculateTotal()} INR`;
-//         localStorage.setItem("cart", JSON.stringify(cart));
-//     }
-
-//     function addToCart(item) {
-//         cart.push(item);
-//         updateCart();
-//     }
-
-//     function removeFromCart(index) {
-//         cart.splice(index, 1);
-//         updateCart();
-//     }
-
-//     function calculateTotal() {
-//         return cart.reduce((total, item) => total + item.price, 0);
-//     }
-
-//     document.getElementById("checkout").addEventListener("click", () => {
-//         if (cart.length === 0) {
-//             alert("Your cart is empty!");
-//         } else {
-//             alert("Proceeding to checkout!");
-//             localStorage.removeItem("cart");
-//             cart = [];
-//             updateCart();
-//         }
-//     });
-
-//     updateCart();
-// });
